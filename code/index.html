@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinetic Sight CosmOS</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪐</text></svg>">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/webgazer@3.3.0/dist/webgazer.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="start_screen">
+        <div class="start-box" style="width: 400px;">
+            <h1 class="title">Kinetic Sight <span>CosmOS</span></h1>
+            <p style="color: #ccc; margin-bottom: 20px;">Distributed Sensors Setup</p>
+            <div id="camera_setup"
+                style="margin-bottom: 20px; text-align: left; background: rgba(0,0,0,0.5); padding: 20px; border-radius: 10px; border: 1px solid rgba(0,210,255,0.3);">
+                <div style="margin-bottom: 15px;">
+                    <label style="color: #00d2ff; font-weight: bold; font-size: 14px;">👁️ Gaze Camera:</label><br>
+                    <select id="eye_cam_select"
+                        style="width: 100%; padding: 8px; margin-top: 5px; background: #222; color: #fff; border: 1px solid #444; border-radius: 5px; outline: none;"></select>
+                </div>
+                <div>
+                    <label style="color: #ff3366; font-weight: bold; font-size: 14px;">🖐️ Hand Camera:</label><br>
+                    <select id="hand_cam_select"
+                        style="width: 100%; padding: 8px; margin-top: 5px; background: #222; color: #fff; border: 1px solid #444; border-radius: 5px; outline: none;"></select>
+                </div>
+                <button id="btn_scan_cams"
+                    style="margin-top: 20px; width: 100%; padding: 10px; background: #444; color: #fff; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s;">🔍
+                    AUTHORIZE & SCAN CAMERAS</button>
+            </div>
+            <button id="btn_start" style="display: none; width: 100%;">START CALIBRATION</button>
+        </div>
+    </div>
+
+    <div id="calibration_screen">
+        <h2 id="calib_counter"
+            style="position: absolute; top: 20px; left: 50%; transform: translateX(-50%); color: #ff3366; z-index: 999999; display: none; margin: 0; font-size: 24px;">
+            Points remaining: 13</h2>
+        <div id="calib_instructions">
+            <h1 style="color: #00d2ff;">Gaze AI Calibration</h1>
+            <p style="font-size: 18px; max-width: 400px; margin: 0 auto 20px auto; line-height: 1.5;">
+                Look at each of the 13 red points and <b>click it 5 times</b> while keeping your eyes fixed on the mouse
+                for maximum precision.<br>
+            </p>
+            <div style="display: flex; gap: 15px; justify-content: center; margin-top: 30px;">
+                <button id="btn_start_calib_points"
+                    style="position: relative; z-index: 9999999; padding: 10px 20px; font-size: 16px; background: #00d2ff; color: #000; font-weight: bold; border: none; border-radius: 10px; cursor: pointer; box-shadow: 0 0 15px rgba(0, 210, 255, 0.5);">🎯
+                    Start Calibration</button>
+                <button id="btn_skip_calib"
+                    style="padding: 10px 20px; font-size: 16px; background: #444; color: white; border: 1px solid #666; border-radius: 10px; cursor: pointer;">⏭️
+                    Skip</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="ui_dashboard" style="display: none;">
+        <h1 class="title">Kinetic Sight <span>CosmOS</span></h1>
+        <div class="status-panel">
+            <p>👁️ Gaze: <span id="status_gaze" class="waiting">Waiting...</span></p>
+            <p>🖐️ Hand: <span id="status_hand" class="waiting">Waiting...</span></p>
+            <p>🎤 Voice: <span id="status_voice" class="active">Listening...</span></p>
+            <span id="live_transcript" style="display:none;"></span>
+            <hr style="margin: 12px 0;">
+            <p class="target-info" style="font-size: 16px !important; margin: 0;">🎯 Target: <br><span
+                    id="status_target" class="highlight">None</span></p>
+        </div>
+        <div id="toggle_cmds"
+            style="margin-top: 15px; padding: 8px; background: rgba(0, 210, 255, 0.1); border: 1px solid rgba(0, 210, 255, 0.3); border-radius: 8px; text-align: center; cursor: pointer; color: #00d2ff; font-weight: bold; font-size: 13px; transition: 0.3s;">
+            Show Commands ▼</div>
+        <div class="instructions" id="cmd_list"
+            style="display: none; margin-top: 10px; font-size: 12px; color: #bbb; line-height: 1.6; border:none; padding-top:0;">
+            <strong>🖐️ Manual Actions:</strong><br>
+            🤏🏻 <b>Pinch:</b> Grab target planet<br>
+            ↕️ <b>Scroll:</b> Hand up/down in Details<br>
+            🫸🏻 <b>Swipe:</b> Lateral strike to exit from Details<br><br>
+            <strong>🎤 Global Commands:</strong><br>
+            - Time: "Stop", "Resume", "Slower", "Faster"<br>
+            - Planet: "Show Jupiter", "Open Earth", etc...<br>
+            - From Details: "Back"<br><br>
+            <strong>🎤 While Holding (Pinch):</strong><br>
+            - Size: "Enlarge", "Shrink", "Reset"<br>
+            - Color: "Red", "Blue", "Green", "Gold", "White", etc...<br>
+            - "Details" or "Information"<br><br>
+            <strong style="color: #ff3366;">🧪 Researcher Logger:</strong><br>
+            - 👤 <b>"New User"</b> (Adds separator)<br>
+            - ▶️ <b>"Start task [name]"</b> (Starts timer)<br>
+            - ⏹️ <b>"Finish task"</b> (Stops & saves)<br>
+            - 💾 <b>"Export logs"</b> (Downloads .txt)<br>
+            - 🗑️ <b>"Clear logs"</b> (Resets memory)
+        </div>
+    </div>
+
+    <div id="info_panel" class="hidden" style="display: none;">
+        <h2 id="info_title">Planet</h2>
+        <hr>
+        <p id="info_desc">Loading description...</p>
+        <div class="stats-grid">
+            <div class="stat-box"><span>Type</span><br><strong id="info_type">--</strong></div>
+            <div class="stat-box"><span>Avg. Temp.</span><br><strong id="info_temp">--</strong></div>
+            <div class="stat-box"><span>Gravity</span><br><strong id="info_grav">--</strong></div>
+        </div>
+    </div>
+
+    <div id="detail_panel" class="hidden">
+        <div class="detail-header">
+            <h1 id="detail_name">Planet Name</h1>
+            <span class="badge" id="detail_badge">Classification</span>
+        </div>
+        <div class="detail-content">
+            <p id="detail_full_desc" class="lead-text">Full description...</p>
+            <h3 class="section-title">Astrophysical Data</h3>
+            <table class="data-table">
+                <tr>
+                    <td>Equatorial Radius:</td>
+                    <td id="dt_radius">--</td>
+                </tr>
+                <tr>
+                    <td>Mass:</td>
+                    <td id="dt_mass">--</td>
+                </tr>
+                <tr>
+                    <td>Distance from Sun:</td>
+                    <td id="dt_dist">--</td>
+                </tr>
+                <tr>
+                    <td>Orbital Period:</td>
+                    <td id="dt_orbit">--</td>
+                </tr>
+                <tr>
+                    <td>Escape Velocity:</td>
+                    <td id="dt_escape" style="color:#00d2ff;">--</td>
+                </tr>
+                <tr>
+                    <td>Core:</td>
+                    <td id="dt_core" style="color:#ffcc00;">--</td>
+                </tr>
+            </table>
+            <h3 class="section-title">Atmospheric Composition</h3>
+            <div class="progress-container"><span id="atm_1_name">Gas 1</span>
+                <div class="progress-bar">
+                    <div id="atm_1_fill" class="fill" style="width: 80%;"></div>
+                </div>
+            </div>
+            <div class="progress-container"><span id="atm_2_name">Gas 2</span>
+                <div class="progress-bar">
+                    <div id="atm_2_fill" class="fill" style="width: 20%;"></div>
+                </div>
+            </div>
+            <h3 class="section-title">Mass Ratio vs Earth</h3>
+            <div class="progress-container"><span id="mass_rel_name">Mass Scale</span>
+                <div class="progress-bar">
+                    <div id="mass_rel_fill" class="fill"
+                        style="width: 100%; background: #ff3366; box-shadow: 0 0 10px #ff3366;"></div>
+                </div>
+            </div>
+            <div class="voice-hint">🎤 Say <b>"Back"</b> or <b>SWIPE</b> 🫸🏻 to return to orbit.</div>
+        </div>
+    </div>
+
+    <div id="gaze_cursor"></div>
+    <div id="canvas3d" style="display: none;"></div>
+    <div id="pip_container" style="display: none;">
+        <video class="input_video" autoplay playsinline style="display:none;"></video>
+        <canvas class="output_canvas"></canvas>
+    </div>
+
+    <script src="audiomanager.js"></script>
+    <script src="voicemanager.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
