@@ -17,12 +17,14 @@ Contains the core logic, interface, and interaction managers of the application.
 * **`app.js`**: The heart of the system. It manages the Three.js 3D environment, initializes the planet assets, and synchronizes the Gaze and Hand Tracking inputs to enable object selection.
 * **`audiomanager.js`**: Handles all auditory feedback. It includes a Text-to-Speech system for accessibility and generates specific auditory tones (Earcons) to confirm user actions and system status.
 * **`voicemanager.js`**: Manages the Web Speech API integration. It listens for vocal commands to modify object properties (color, scale) and navigate through the data panels.
+* **`analysis.py`**: A Python script used to process raw logs and survey data to generate analytical charts.
 
 ### 🔹 `test/`
 Contains the experimental data and protocols used to validate the system's usability.
 * **`Tasks.txt`**: The official testing protocol. It contains the three incremental tasks (Exploration, Synergy, and Navigation) used during user studies.
 * **`cosmos_test_results.txt`**: Raw logs exported by the internal Data Logger, including time-on-task, missed activations, and voice recognition failures.
 * **`Kinetic Sight CosmOS: Usability and Workload Evaluation.csv`**: Aggregated quantitative data from the System Usability Scale (SUS) and NASA-TLX questionnaires.
+* **`analysis/`**: A subdirectory containing the generated visualization charts (Learning Curve, Error Reduction, etc.) in .png format.
 
 ### 🔹 `textures/`
 Contains high-resolution assets for the 3D simulation.
