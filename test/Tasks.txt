@@ -1,0 +1,26 @@
+Usability Testing Protocol: Tasks & Objectives
+
+General Purpose of the Study:
+The primary goal of this usability test is to evaluate the Learnability, Efficiency, and Ergonomics of the Kinetic Sight CosmOS interface. Instead of comparing the system to traditional peripherals (like a mouse), the study employs a Within-Subjects Design to measure how quickly users adapt to a completely touchless, multimodal paradigm. The tasks are designed incrementally to assess the system's ability to prevent common HCI issues, such as unintentional activations (false positives) and physical fatigue.
+
+---
+
+📌 Task 1: Basic Exploration (Gaze, Kinetics & Voice)
+- The Action: The user must locate Jupiter using their gaze and perform a "Pinch" gesture to grab it. While holding the pinch, they must say "Details" to open the information panel, and finally say "Back" (or perform a lateral "Swipe") to close it.
+- How it Works: The system uses WebGazer for spatial targeting and MediaPipe to detect the pinch trigger, while the Web Speech API awaits the confirmation command. 
+- Scientific Objective: This task evaluates fundamental hand-eye-voice coordination. It proves our solution to the "Midas Touch" problem: targeting (eyes), holding (hand), and opening (voice) are completely decoupled, making unintentional activations virtually impossible.
+
+📌 Task 2: Multimodal Synergy (Kinetics & Voice)
+- The Action: The user must find Mars, grab it with a Pinch, and hold it. While holding the planet, they must use voice commands—saying "Enlarge" to increase its scale, and "Blue" to change its color. Finally, they release the pinch to exit.
+- How it Works: The system fuses continuous gesture tracking with the Web Speech API. The vocal commands are contextual: they only apply to the celestial body currently held by the user's kinetic input.
+- Scientific Objective: This task measures the reduction of Cognitive Load. By delegating complex property modifications (size, color) to the vocal channel while the hand is simply holding the object, the system avoids forcing the user to learn complex or unnatural hand gestures.
+
+📌 Task 3: Fine Control & Data Navigation (Scroll)
+- The Action: The user grabs Earth and says "Details" to open its data panel. Keeping their hand closed (pinched or in a fist), they move their hand vertically to scroll down the text, locate a specific piece of data (e.g., "Escape Velocity"), read it aloud, and finally say "Back" to close the panel.
+- How it Works: The vertical delta (Y-axis movement) of the tracked hand is translated into a scroll velocity. The Data Logger continues to monitor the execution time until the vocal command "Back" is successfully recognized.
+- Scientific Objective: This task is crucial for evaluating Physical Ergonomics. Traditional gesture interfaces force users to keep their arms raised, leading to physical fatigue. By allowing users to scroll with small, relaxed wrist movements and exit using a simple vocal command, this task gathers data to score well on the NASA-TLX questionnaire.
+
+---
+
+Data Collection & Metrics
+Throughout all three tasks, an invisible background Data Logger automatically records a comprehensive set of quantitative metrics: Time on Task (in seconds), Missed Pinches (activation attempts without a valid gaze target), Voice Fails (unrecognized or invalid speech commands), and Total Grabs (the total number of times celestial bodies are successfully grabbed, which highlights gaze-targeting precision). By having users perform these tasks in two different sessions (T0 as novices, T1 after a brief familiarization phase), the collected data will empirically demonstrate the system's steep learning curve, multimodal reliability, and high usability.

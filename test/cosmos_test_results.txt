@@ -1,0 +1,95 @@
+
+--- NEW USER SESSION ---
+Task: start task 1 | Time: 35.66s | Missed Pinches: 1 | Voice Fails: 0 | Total Grabs: 2
+Task: start task 2 | Time: 36.48s | Missed Pinches: 5 | Voice Fails: 2 | Total Grabs: 2
+Task: start task 3 | Time: 37.57s | Missed Pinches: 8 | Voice Fails: 0 | Total Grabs: 6
+
+--- NEW USER SESSION ---
+Task: start task 1 | Time: 45.12s | Missed Pinches: 3 | Voice Fails: 0 | Total Grabs: 5
+Task: start task 2 | Time: 32.40s | Missed Pinches: 1 | Voice Fails: 1 | Total Grabs: 2
+Task: start task 3 | Time: 25.80s | Missed Pinches: 0 | Voice Fails: 0 | Total Grabs: 1
+
+--- NEW USER SESSION ---
+Task: start task 1 | Time: 28.55s | Missed Pinches: 9 | Voice Fails: 0 | Total Grabs: 2
+Task: start task 2 | Time: 30.15s | Missed Pinches: 6 | Voice Fails: 1 | Total Grabs: 1
+Task: start task 3 | Time: 22.10s | Missed Pinches: 2 | Voice Fails: 0 | Total Grabs: 1
+
+--- NEW USER SESSION ---
+Task: start task 1 | Time: 38.45s | Missed Pinches: 2 | Voice Fails: 0 | Total Grabs: 3
+Task: start task 2 | Time: 52.30s | Missed Pinches: 1 | Voice Fails: 4 | Total Grabs: 1
+Task: start task 3 | Time: 28.60s | Missed Pinches: 0 | Voice Fails: 0 | Total Grabs: 1
+
+--- NEW USER SESSION ---
+Task: start task 1 | Time: 62.10s | Missed Pinches: 1 | Voice Fails: 0 | Total Grabs: 8
+Task: start task 2 | Time: 40.25s | Missed Pinches: 2 | Voice Fails: 0 | Total Grabs: 2
+Task: start task 3 | Time: 31.40s | Missed Pinches: 0 | Voice Fails: 0 | Total Grabs: 1
+
+--- NEW USER SESSION ---
+Task: start task 1 | Time: 22.15s | Missed Pinches: 0 | Voice Fails: 0 | Total Grabs: 1
+Task: start task 2 | Time: 24.30s | Missed Pinches: 1 | Voice Fails: 0 | Total Grabs: 1
+Task: start task 3 | Time: 19.45s | Missed Pinches: 0 | Voice Fails: 0 | Total Grabs: 1
+
+--- NEW USER SESSION ---
+Task: start task 1 | Time: 41.20s | Missed Pinches: 5 | Voice Fails: 1 | Total Grabs: 4
+Task: start task 2 | Time: 35.15s | Missed Pinches: 2 | Voice Fails: 0 | Total Grabs: 1
+Task: start task 3 | Time: 26.33s | Missed Pinches: 1 | Voice Fails: 0 | Total Grabs: 1
+
+--- NEW USER SESSION ---
+Task: start task 1 | Time: 33.50s | Missed Pinches: 2 | Voice Fails: 0 | Total Grabs: 2
+Task: start task 2 | Time: 29.80s | Missed Pinches: 0 | Voice Fails: 1 | Total Grabs: 1
+Task: start task 3 | Time: 24.12s | Missed Pinches: 0 | Voice Fails: 0 | Total Grabs: 1
+
+--- NEW USER SESSION ---
+Task: start task 1 | Time: 55.40s | Missed Pinches: 8 | Voice Fails: 0 | Total Grabs: 2
+Task: start task 2 | Time: 48.20s | Missed Pinches: 5 | Voice Fails: 2 | Total Grabs: 2
+Task: start task 3 | Time: 36.50s | Missed Pinches: 2 | Voice Fails: 0 | Total Grabs: 1
+
+--- NEW USER SESSION ---
+Task: start task 1 | Time: 30.15s | Missed Pinches: 1 | Voice Fails: 0 | Total Grabs: 2
+Task: start task 2 | Time: 58.75s | Missed Pinches: 3 | Voice Fails: 5 | Total Grabs: 2
+Task: start task 3 | Time: 27.90s | Missed Pinches: 0 | Voice Fails: 0 | Total Grabs: 1
+
+--- NEW USER SESSION ---
+Task: start task 1 | Time: 39.90s | Missed Pinches: 4 | Voice Fails: 0 | Total Grabs: 3
+Task: start task 2 | Time: 33.10s | Missed Pinches: 1 | Voice Fails: 0 | Total Grabs: 1
+Task: start task 3 | Time: 25.45s | Missed Pinches: 0 | Voice Fails: 1 | Total Grabs: 1
+
+--- NEW USER SESSION ---
+Task: start task 1 | Time: 25.60s | Missed Pinches: 1 | Voice Fails: 0 | Total Grabs: 1
+Task: start task 2 | Time: 28.40s | Missed Pinches: 0 | Voice Fails: 0 | Total Grabs: 1
+Task: start task 3 | Time: 21.15s | Missed Pinches: 0 | Voice Fails: 0 | Total Grabs: 1
+
+--- NEW USER SESSION ---
+Task: start task 1 | Time: 48.30s | Missed Pinches: 6 | Voice Fails: 1 | Total Grabs: 4
+Task: start task 2 | Time: 38.55s | Missed Pinches: 2 | Voice Fails: 1 | Total Grabs: 1
+Task: start task 3 | Time: 29.20s | Missed Pinches: 1 | Voice Fails: 0 | Total Grabs: 1
+
+--- NEW USER SESSION ---
+Task: start task 1 | Time: 36.80s | Missed Pinches: 3 | Voice Fails: 0 | Total Grabs: 2
+Task: start task 2 | Time: 44.10s | Missed Pinches: 2 | Voice Fails: 3 | Total Grabs: 1
+Task: start task 3 | Time: 28.50s | Missed Pinches: 0 | Voice Fails: 0 | Total Grabs: 1
+
+--- NEW USER SESSION ---
+Task: start task 1 | Time: 18.45s | Missed Pinches: 0 | Voice Fails: 0 | Total Grabs: 1
+Task: start task 2 | Time: 20.30s | Missed Pinches: 0 | Voice Fails: 0 | Total Grabs: 1
+Task: start task 3 | Time: 17.80s | Missed Pinches: 0 | Voice Fails: 0 | Total Grabs: 1
+
+--- NEW USER SESSION ---
+Task: start task 1 | Time: 51.25s | Missed Pinches: 4 | Voice Fails: 0 | Total Grabs: 5
+Task: start task 2 | Time: 37.60s | Missed Pinches: 1 | Voice Fails: 0 | Total Grabs: 1
+Task: start task 3 | Time: 26.15s | Missed Pinches: 0 | Voice Fails: 0 | Total Grabs: 1
+
+--- NEW USER SESSION ---
+Task: start task 1 | Time: 19.20s | Missed Pinches: 0 | Voice Fails: 0 | Total Grabs: 1
+Task: start task 2 | Time: 21.45s | Missed Pinches: 1 | Voice Fails: 0 | Total Grabs: 1
+Task: start task 3 | Time: 16.90s | Missed Pinches: 0 | Voice Fails: 0 | Total Grabs: 1
+
+--- NEW USER SESSION ---
+Task: start task 1 | Time: 24.10s | Missed Pinches: 1 | Voice Fails: 0 | Total Grabs: 2
+Task: start task 2 | Time: 28.30s | Missed Pinches: 0 | Voice Fails: 2 | Total Grabs: 1
+Task: start task 3 | Time: 20.15s | Missed Pinches: 0 | Voice Fails: 0 | Total Grabs: 1
+
+--- NEW USER SESSION ---
+Task: start task 1 | Time: 31.40s | Missed Pinches: 2 | Voice Fails: 0 | Total Grabs: 3
+Task: start task 2 | Time: 26.50s | Missed Pinches: 0 | Voice Fails: 0 | Total Grabs: 1
+Task: start task 3 | Time: 22.10s | Missed Pinches: 0 | Voice Fails: 0 | Total Grabs: 1
