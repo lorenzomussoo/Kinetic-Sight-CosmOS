@@ -1,4 +1,4 @@
-# Kinetic Sight CosmOS
+# Kinetic Sight CosmOS 
 
 **Kinetic Sight CosmOS** is an experimental multimodal interface designed for the immersive exploration of the Solar System within a web browser. The project focuses on seamless interaction through the integration of three distinct input modalities: **Gaze Tracking**, **Hand Gestures**, and **Voice Commands**.
 
