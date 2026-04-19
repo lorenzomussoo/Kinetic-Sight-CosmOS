@@ -16,7 +16,7 @@ The primary goal of this usability test is to evaluate the Learnability, Efficie
 - Scientific Objective: This task measures the reduction of Cognitive Load. By delegating complex property modifications (size, color) to the vocal channel while the hand is simply holding the object, the system avoids forcing the user to learn complex or unnatural hand gestures.
 
 📌 Task 3: Fine Control & Data Navigation (Scroll)
-- The Action: The user grabs Earth and says "Details" to open its data panel. Keeping their hand closed (pinched or in a fist), they move their hand vertically to scroll down the text, locate a specific piece of data (e.g., "Escape Velocity"), read it aloud, and finally say "Back" to close the panel.
+- The Action: The user grabs Earth and says "Details" to open its data panel. By simply moving their hand vertically, they scroll down the text, locate a specific piece of data (e.g., "Escape Velocity"), read it aloud, and finally say "Back" to close the panel.
 - How it Works: The vertical delta (Y-axis movement) of the tracked hand is translated into a scroll velocity. The Data Logger continues to monitor the execution time until the vocal command "Back" is successfully recognized.
 - Scientific Objective: This task is crucial for evaluating Physical Ergonomics. Traditional gesture interfaces force users to keep their arms raised, leading to physical fatigue. By allowing users to scroll with small, relaxed wrist movements and exit using a simple vocal command, this task gathers data to score well on the NASA-TLX questionnaire.
 
