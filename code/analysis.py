@@ -39,6 +39,19 @@ task_means = df_logs.groupby('Task').mean().reset_index()
 csv_file = 'test/Kinetic Sight CosmOS: Usability and Workload Evaluation.csv'
 df_csv = pd.read_csv(csv_file)
 
+sus_cols = df_csv.columns[3:13]
+df_sus = df_csv[sus_cols].copy()
+
+for col in sus_cols:
+    df_sus[col] = df_sus[col].astype(str).str.extract(r'(\d+)').astype(int)
+
+odds_scores = df_sus.iloc[:, [0, 2, 4, 6, 8]] - 1
+evens_scores = 5 - df_sus.iloc[:, [1, 3, 5, 7, 9]]
+user_sus_scores = (odds_scores.sum(axis=1) + evens_scores.sum(axis=1)) * 2.5
+final_sus_score = user_sus_scores.mean()
+
+print(f"Average SUS Score: {final_sus_score:.1f}")
+
 phys_col = [c for c in df_csv.columns if 'physically tiring' in c.lower()][0]
 ment_col = [c for c in df_csv.columns if 'mentally demanding' in c.lower()][0]
 frust_col = [c for c in df_csv.columns if 'insecure' in c.lower()][0]
