@@ -4,6 +4,8 @@
 
 By decoupling targeting, activation, and property modification, the system provides a fluid, touchless experience that minimizes unintentional interactions and physical strain, making it ideal for educational and public exhibition contexts.
 
+See the Interaction Showcase here: [![Demo](https://drive.google.com/file/d/1u2J1Ea2kbM8hgNCwfD80ti0UOEzrMmRT/view?usp=sharing)](https://drive.google.com/file/d/1u2J1Ea2kbM8hgNCwfD80ti0UOEzrMmRT/view?usp=sharing)
+
 ---
 
 ## 📁 Project Structure
