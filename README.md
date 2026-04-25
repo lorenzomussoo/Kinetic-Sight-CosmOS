@@ -4,7 +4,8 @@
 
 By decoupling targeting, activation, and property modification, the system provides a fluid, touchless experience that minimizes unintentional interactions and physical strain, making it ideal for educational and public exhibition contexts.
 
-See the Interaction Showcase here: [![Demo](screenshots/Home.png)](https://drive.google.com/file/d/1u2J1Ea2kbM8hgNCwfD80ti0UOEzrMmRT/view?usp=sharing)
+See the Interaction Showcase here (click on the image to watch the video): 
+[![Demo](screenshots/Home.png)](https://drive.google.com/file/d/1u2J1Ea2kbM8hgNCwfD80ti0UOEzrMmRT/view?usp=sharing)
 
 ---
 
@@ -36,6 +37,7 @@ Contains high-resolution assets for the 3D simulation.
 
 ### 🔹 `screenshots/`
 Contains screenshots of the web application, showcasing different screens and interaction modes.
+
 
 In the Root directory there are also:
 * **Project Report**: A detailed document describing the system design, implementation, and evaluation.
