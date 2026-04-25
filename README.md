@@ -4,7 +4,7 @@
 
 By decoupling targeting, activation, and property modification, the system provides a fluid, touchless experience that minimizes unintentional interactions and physical strain, making it ideal for educational and public exhibition contexts.
 
-See the Interaction Showcase here: [![Demo](https://drive.google.com/file/d/1u2J1Ea2kbM8hgNCwfD80ti0UOEzrMmRT/view?usp=sharing)](https://drive.google.com/file/d/1u2J1Ea2kbM8hgNCwfD80ti0UOEzrMmRT/view?usp=sharing)
+See the Interaction Showcase here: [![Demo](screenshots/Home.png)](https://drive.google.com/file/d/1u2J1Ea2kbM8hgNCwfD80ti0UOEzrMmRT/view?usp=sharing)
 
 ---
 
@@ -33,6 +33,13 @@ Contains high-resolution assets for the 3D simulation.
 * **4K Planet Textures**: High-fidelity surfaces for all major celestial bodies.
 * **Atmospheres & Clouds**: Dynamic layers for Earth and other atmospheric planets.
 * **Environmental Assets**: Textures for the Sun and Moon.
+
+### 🔹 `screenshots/`
+Contains screenshots of the web application, showcasing different screens and interaction modes.
+
+In the Root directory there are also:
+* **Project Report**: A detailed document describing the system design, implementation, and evaluation.
+* **Presentation**: Slides used to present the project, including methodology, results, and key insights.
 
 ---
 
