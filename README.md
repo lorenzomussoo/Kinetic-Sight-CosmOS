@@ -59,12 +59,11 @@ To run the project locally, you need a modern web browser with camera and microp
     ```bash
     git clone [https://github.com/your-username/Kinetic-Sight-CosmOS.git](https://github.com/your-username/Kinetic-Sight-CosmOS.git)
     ```
-2.  Navigate to the `code/` folder.
-3.  Launch a local server using Python:
+2.  Launch a local server using Python:
 ```bash
     python3 -m http.server 8000
 ```
-4.  Open your browser (Google Chrome is recommended) and navigate to `http://localhost:8000`. Follow the on-screen calibration steps for gaze tracking.
+3.  Open your browser (Google Chrome is recommended) and navigate to `http://localhost:8000/code/`. Follow the on-screen calibration steps for gaze tracking.
 
 ---
 
